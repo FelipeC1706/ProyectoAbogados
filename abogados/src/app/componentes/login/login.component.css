@@ -155,7 +155,9 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
     margin: 0 55px; }
   
   .form-title {
-    margin-bottom: 33px; }
+    margin-bottom: 33px; 
+    position: relative;
+    left: 35px;}
   
   .signup-image {
     margin-top: 45px; }
