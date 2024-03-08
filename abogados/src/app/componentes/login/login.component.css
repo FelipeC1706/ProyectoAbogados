@@ -205,9 +205,11 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
   .form-group {
     position: relative;
     margin-bottom: 25px;
-    overflow: hidden; }
+    overflow: hidden; 
+    left: 8px;}
     .form-group:last-child {
-      margin-bottom: 0px; }
+      margin-bottom: 0px; 
+    left: 65px;}
   
   input {
     width: 100%;
@@ -448,7 +450,7 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
       -ms-justify-content: center; }
   
     .form-button {
-      text-align: center; }
+      text-align: center;}
   
     .signin-form {
       order: 1;
@@ -461,7 +463,9 @@ display-flex, .display-flex, .display-flex-center, .signup-content, .signin-cont
       padding: 0 30px; }
   
     .form-title {
-      text-align: center; } }
+      text-align: center; 
+      position: relative;
+      right: 100px;} }
   @media screen and (max-width: 400px) {
     .social-login {
       flex-direction: column;
