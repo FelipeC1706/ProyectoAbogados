@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './componentes/login/login.component';
+
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { LoginComponent } from './componentes/login/login.component';
 import { PeticionesComponent } from './componentes/peticiones/peticiones.component';
 
 @NgModule({
