@@ -12,6 +12,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { DatatableComponent } from './componentes/datatable/datatable.component';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DatatableComponent } from './componentes/datatable/datatable.component'
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
