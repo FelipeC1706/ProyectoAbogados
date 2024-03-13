@@ -31,6 +31,9 @@ router.patch('/lawyers/:id', lawyerController.changeStatus);
 // Ruta para obtener un abogado por su ID
 router.get('/lawyers/:id', lawyerController.getLawyerById);
 
+// Ruta para obtener una peticion por el documento del abogado
+router.get('/lawyersRequests/:abo_documento', requestsController.getRequestsLawyer);
+
 // Ruta para obtener todas las peticiones
 router.get('/requests', requestsController.getRequests);
 

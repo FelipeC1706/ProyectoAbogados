@@ -11,12 +11,14 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { LoginComponent } from './componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { DatatableComponent } from './componentes/datatable/datatable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    DatatableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,13 @@
 const express = require('express');
 const session = require('express-session');
 const routes = require('./router');
-require('dotenv').config({path: './.env'});
+const env = require('dotenv').config({path: './.env'});
 
 const app = express();
 
 // Middleware para parsear el cuerpo de la solicitud en formato JSON
 app.use(express.json());
+
 
 app.use(session({
   secret: 'tu_secreto',

@@ -2,7 +2,20 @@ const dbConnection = require('../database/db');
 
 // Controlador para manejar la ruta '/requests'
 function getRequests(req, res) {
+
   dbConnection.query('SELECT * FROM peticiones', (err, resultados) => {
+    if (err) {
+      console.error('Error al ejecutar la consulta: ', err);
+      res.status(500).send('Error interno del servidor');
+      return;
+    }
+    res.json(resultados);
+  });
+}
+
+function getRequestsLawyer(req, res) {
+  const abo_documento = req.params.abo_documento;
+  dbConnection.query('SELECT * FROM peticiones where abo_documento = ?', [abo_documento],(err, resultados) => {
     if (err) {
       console.error('Error al ejecutar la consulta: ', err);
       res.status(500).send('Error interno del servidor');
@@ -47,5 +60,6 @@ function updateRequest(req, res) {
 
 module.exports = {
     getRequests,
-    updateRequest
+    updateRequest,
+    getRequestsLawyer
 };
