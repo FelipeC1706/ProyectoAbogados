@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class DatatableComponent {
 
-  dtoptions: DataTables.Settings = {pagingType: 'full_numbers'};
 }

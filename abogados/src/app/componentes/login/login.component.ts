@@ -26,27 +26,33 @@ export class LoginComponent implements OnInit{
   login(){
     this.toastr.info("esto es"+this.username+ this.password);
     if(this.username == '' || this.password == ''){
-      this.toastr.error('Todos los campos son obligatorios');
-      return
+        this.toastr.error('Todos los campos son obligatorios');
+        return;
     }
 
-    const abogado: Abogados = {
-      abo_correo: this.username,
-      abo_password: this.password
-    }
+    const data = {
+        user: this.username, // Cambiado a 'user' para que coincida con el backend
+        pass: this.password // Cambiado a 'pass' para que coincida con el backend
+    };
 
-    this._abogadoService.login(abogado).subscribe(
-           
-      data => {
-        // Navegar a la ruta dashboard en éxito
-        this.router.navigate(['/dashboard']);
-      },
-      error => {
-        // Manejar error aquí
-        console.error(error);
-        this.toastr.error(error);
-        this.toastr.error('Ha ocurrido un error al iniciar sesión, por favor inténtalo de nuevo');
-      }
-    )
-  }
+    fetch('http://localhost:3000/loginAbo/', {
+        method: 'POST',
+        headers:{
+            'Content-Type':'application/json',
+        },
+        body: JSON.stringify(data), // Enviamos los datos en el cuerpo de la solicitud como JSON
+    })
+    .then(response => {
+        if (response.ok) {
+            // Si la respuesta es exitosa (código de estado 200), mostrar un mensaje de éxito
+            this.toastr.success('Conexión exitosacdgdfh0');
+        } else {
+            // Si la respuesta es un error (código de estado diferente de 200), mostrar un mensaje de error
+            this.toastr.error('Credenciales incorrectas');
+        }
+    })
+    .catch(error=>{
+        console.log(error);
+    });
+}
 }
