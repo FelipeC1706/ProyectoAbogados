@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { PeticionesComponent } from './componentes/peticiones/peticiones.component';
+import {PeticionesComponent}from './componentes/peticiones/peticiones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    PeticionesComponent,
     LoginComponent,
-    PeticionesComponent
   ],
   imports: [
     BrowserModule,
