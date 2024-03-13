@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit{
   }
 
   login(){
-    this.toastr.info("esto es"+this.username+ this.password);
     if(this.username == '' || this.password == ''){
         this.toastr.error('Todos los campos son obligatorios');
         return;
@@ -45,7 +44,8 @@ export class LoginComponent implements OnInit{
     .then(response => {
         if (response.ok) {
             // Si la respuesta es exitosa (código de estado 200), mostrar un mensaje de éxito
-            this.toastr.success('Conexión exitosacdgdfh0');
+            this.toastr.success('Credenciales correctas');
+            this.router.navigate(['/dashboard']);
         } else {
             // Si la respuesta es un error (código de estado diferente de 200), mostrar un mensaje de error
             this.toastr.error('Credenciales incorrectas');
