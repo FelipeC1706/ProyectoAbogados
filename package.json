@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/core": "^17.2.4",
+    "@angular/forms": "^17.2.4",
+    "@angular/platform-browser": "^17.2.4",
+    "@angular/router": "^17.2.4",
+    "ngx-toastr": "^18.0.0"
+  }
+}
