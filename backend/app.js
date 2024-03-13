@@ -2,6 +2,8 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./router');
 const env = require('dotenv').config({path: './.env'});
+const cors = require('cors');
+
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use(session({
   saveUninitialized: false
 }));
 // Configurar las rutas
+app.use(cors());
 app.use('/', routes);
 
 // Puerto en el que se ejecutará el servidor

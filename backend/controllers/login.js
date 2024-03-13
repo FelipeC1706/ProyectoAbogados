@@ -9,10 +9,10 @@ const bcrypt = require('bcryptjs');
     const adm_password = req.body.pass;
 
     try {
-		console.log("yooooo111");
+		//console.log("yooooo111");
         const query = `SELECT * FROM administrador WHERE adm_correo = ?`;
 		const values = [adm_correo];
-		console.log("aquiiii");
+		//console.log("aquiiii");
         config.query(query, values, (err, resultados) => {
 			if (adm_correo && adm_password) {
 				if (resultados.length === 0 ) {
@@ -56,13 +56,13 @@ exports.authAbo = async (req, res) => {
 		const values = [abo_correo, abo_password];
 		console.log("aquiiii");
         config.query(query, values, (err, resultados) => {
-			usuarioEncontrado = resultados[0];
+			//usuarioEncontrado = resultados[0];
 			if (abo_correo && abo_password) {
-				if (resultados.length === 0 || abo_password != usuarioEncontrado.abo_password) {
+				if (resultados.length === 0 || abo_password != resultados[0].abo_password) {
 					res.status(400).send({
 						alert: true,
 						alertTitle: "Error",
-						alertMessage: "USUARIO y/o CONTRASEÑA incorrectos",
+						alertMessage: "credenciales incorrectas",
 						ruta: 'login'
 					  });
 				} else {
