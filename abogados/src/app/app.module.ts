@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { LoginComponent } from './componentes/login/login.component';
 import {PeticionesComponent}from './componentes/peticiones/peticiones.component';
+import {DataTablesModule} from 'angular-datatables';
+import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +22,10 @@ import {PeticionesComponent}from './componentes/peticiones/peticiones.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

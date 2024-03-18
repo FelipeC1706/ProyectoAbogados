@@ -1,9 +1,9 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Abogados } from 'src/app/interfaces/abogados';
-import { AbogadoService } from 'src/app/services/abogado.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   username: string = '';
   password: string = '';
 
-  constructor(private toastr: ToastrService, private _abogadoService: AbogadoService,
+  constructor(private toastr: ToastrService,
     private router: Router){}
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
         headers:{
             'Content-Type':'application/json',
         },
-        body: JSON.stringify(data), // Enviamos los datos en el cuerpo de la solicitud como JSON
+        body: JSON.stringify(data) // Enviamos los datos en el cuerpo de la solicitud como JSON
     })
     .then(response => {
         if (response.ok) {

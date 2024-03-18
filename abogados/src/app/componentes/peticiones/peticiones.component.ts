@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './peticiones.component.html',
   styleUrls: ['./peticiones.component.css']
 })
-export class DatatableComponent implements OnInit{
+export class PeticionesComponent implements OnInit{
 
   dtOptions: DataTables.Settings = {};
 
@@ -13,7 +13,10 @@ export class DatatableComponent implements OnInit{
 
   ngOnInit(): void {
     this.dtOptions = {
-          pagingType: 'full_numbers'
+          pagingType: 'full_numbers',
+          language: {
+            url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json'
+          }
     };
   }
 

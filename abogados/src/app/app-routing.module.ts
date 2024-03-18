@@ -6,13 +6,12 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 
 //components
 import { LoginComponent } from './componentes/login/login.component';
-import { DatatableComponent } from './componentes/datatable/datatable.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'datatable', component: DatatableComponent},
+  {path: 'peticiones', component: PeticionesComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
