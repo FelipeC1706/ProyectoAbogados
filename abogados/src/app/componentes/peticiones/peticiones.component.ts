@@ -44,12 +44,11 @@ export class PeticionesComponent implements OnInit{
       })
       .then(data => {
         this.data = data;
-        this.dtOptions.data = data;
+        this.dtOptions = data;
       })
       .catch(error => {
         console.error(error);
-      });
-  }
-  
-
+      });
+  }
+  
 }
