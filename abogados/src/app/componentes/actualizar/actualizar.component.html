@@ -6,30 +6,50 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Registrar Usuario</h2>
+                        <h2 class="form-title">Actualizar Petición</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Nombre"/>
+                                <label for="pet_id"><i class="zmdi zmdi-account material-icons-pet_id"></i></label>
+                                <input type="text" name="pet_id" id="pet_id" placeholder="Id" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Correo Electronico"/>
+                                <label for="pet_descripcion"><i class="zmdi zmdi-pet_descripcion"></i></label>
+                                <input type="text" name="pet_descripcion" id="pet_descripcion" placeholder="Descripción" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Contraseña"/>
+                                <label for="pet_fecha_registro"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="text" name="pet_fecha_registro" id="pet_fecha_registro" placeholder="Fecha Registro" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Confirmar Contraseña"/>
+                                <label for="pet_fecha_respuesta"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="pet_fecha_respuesta" id="pet_fecha_respuesta" placeholder="Fecha Respuesta" readonly/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>Aceptar terminos y condiciones  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="tipo_pe_id"><i class="zmdi zmdi-account material-icons-tipo_pe_id"></i></label>
+                                <input type="text" name="tipo_pe_id" id="tipo_pe_id" placeholder="Tipo Petición" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="abo_documento"><i class="zmdi zmdi-abo_documento"></i></label>
+                                <input type="text" name="abo_documento" id="abo_documento" placeholder="Documento" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_clientes"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="text" name="id_clientes" id="id_clientes" placeholder="Clientes" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="seg_id"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="seg_id" id="seg_id" placeholder="Seguimiento" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="seg_descripcion"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="seg_descripcion" id="seg_descripcion" placeholder="Descripción Seguimiento"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pet_prioridad"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="pet_prioridad" id="pet_prioridad" placeholder="Prioridad" readonly/>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Registrar"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Actualizar"/>
                             </div>
                         </form>
                     </div>
