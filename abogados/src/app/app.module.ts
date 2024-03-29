@@ -10,6 +10,7 @@ import {PeticionesComponent}from './componentes/peticiones/peticiones.component'
 import {DataTablesModule} from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
 
 
 
@@ -19,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
     DashboardComponent,
     PeticionesComponent,
     LoginComponent,
+    ActualizarComponent,
   ],
   imports: [
     BrowserModule,
