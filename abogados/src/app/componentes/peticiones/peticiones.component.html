@@ -14,6 +14,7 @@
                 <th>cliente</th>
                 <th>seguimiento</th>
                 <th>prioridad</th>
+                <th>acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@
                 <td>{{ item.id_clientes }}</td>
                 <td>{{ item.seg_id }}</td>
                 <td>{{ item.pet_prioridad }}</td>
+                <td>
+                    <button class="btn btn-primary" routerLink="/actualizar" (click)="(item)">Editar</button>
+                    <button class="btn btn-danger" (click)="(item)">Ver</button>
             </tr>
         </tbody>
     </table>
