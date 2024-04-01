@@ -48,7 +48,7 @@ export class PeticionesComponent implements OnInit{
       })
       .catch(error => {
         console.error(error);
-      });
-  }
-  
+    });
+  }
+
 }

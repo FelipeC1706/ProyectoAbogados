@@ -62,4 +62,7 @@ router.put('/requests_seg/:pet_id', requestsController.agregarIdSeguimiento);
 // Ruta para añadir seguimiento
 router.post('/seguimiento', seguimientoController.insertarNovedad);
 
+// Ruta para añadir seguimiento
+router.get('/seguimiento', seguimientoController.getSeguimiento);
+
 module.exports = router;
