@@ -13,6 +13,8 @@ export class ActualizarComponent implements OnInit {
   seg_id: number = 0;
   pet_id: number = 0;
   seg_descripcion: string = '';
+  est_id: number = 0;
+  his_descripcion: string = '';
 
   constructor(private route: ActivatedRoute, 
     private toastr: ToastrService,
@@ -59,7 +61,7 @@ export class ActualizarComponent implements OnInit {
     const data = {
       seg_descripcion: this.seg_descripcion,
     };
-    fetch(`http://localhost:3000/seguimiento`, { 
+    fetch('http://localhost:3000/seguimiento', { 
       method: 'POST', // Cambiamos el método a 'POST'
       headers: {
         'Content-Type': 'application/json'
@@ -82,7 +84,7 @@ export class ActualizarComponent implements OnInit {
     });
 
     // Traer la id de la ultima novedad
-    fetch(`http://localhost:3000/seguimiento`)
+    fetch('http://localhost:3000/seguimiento')
     .then(response => {
         if (response.ok) {
           return response.json();
@@ -97,5 +99,35 @@ export class ActualizarComponent implements OnInit {
         console.error(error);
     });
   }
+
+  postEstado() {
+    const data = {
+      est_id: this.est_id,
+      pet_id: this.pet_id,
+      his_descripcion: this.his_descripcion
+    };
+    fetch('http://localhost:3000/estatus/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        this.toastr.success('Se agrego el estado correctamente');
+        this.router.navigate(['/actualizar', this.item]);
+      } else {
+        throw new Error('Error al cambiar el estado');
+      }
+    })
+    .then(data => {
+      console.log('Estado creado correctamente:', data);
+    })
+    .catch(error => {
+      console.error('Error al crear el estado:', error);
+    });
+  }
+
   
 }

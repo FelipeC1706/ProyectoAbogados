@@ -36,7 +36,17 @@
                         </div>
                         <div class="form-group">
                             <p>Estado del Seguimiento</p>
-                            <input type="text" name="est_seg" id="est_seg" placeholder="Estado (Registrada, En curso o Terminada)" />
+                            <select class="form-select" aria-label="Default select example" name="seg_estado" id="seg_estado" [(ngModel)]="est_id">
+                                <option value="1">Registrada</option>
+                                <option value="2">En curso</option>
+                                <option value="3">Finalizada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <p>Descripción del Estado</p>
+                            <input type="text" name="his_descripcion" id="his_descripcion" placeholder="Descripción del Estado" [(ngModel)] = "his_descripcion"/>
+                            <br>
+                            <button class="btn btn-primary" (click)="postEstado()">Agregar Estado</button>
                         </div>
                         <div class="form-group">
                             <p>Id Seguimiento</p>

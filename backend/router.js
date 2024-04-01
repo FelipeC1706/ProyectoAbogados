@@ -5,6 +5,7 @@ const lawyerController = require('./controllers/lawyerController');
 const requestsController = require('./controllers/requestsController');
 const clientController = require('./controllers/clientController');
 const seguimientoController = require('./controllers/seguimientoController');
+const estatusController = require('./controllers/estatusController');
 const login = require('./controllers/login');
 const app = express();
 
@@ -62,7 +63,10 @@ router.put('/requests_seg/:pet_id', requestsController.agregarIdSeguimiento);
 // Ruta para añadir seguimiento
 router.post('/seguimiento', seguimientoController.insertarNovedad);
 
-// Ruta para añadir seguimiento
+// Ruta para recibir id de novedad
 router.get('/seguimiento', seguimientoController.getSeguimiento);
+
+// Ruta para cambiar estado de una petición
+router.post('/estatus', estatusController.cambioEstado);
 
 module.exports = router;
