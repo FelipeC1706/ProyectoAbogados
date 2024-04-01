@@ -29,7 +29,7 @@
                 <td>{{ item.seg_id }}</td>
                 <td>{{ item.pet_prioridad }}</td>
                 <td>
-                    <button class="btn btn-primary" routerLink="/actualizar" (click)="(item)">Editar</button>
+                    <button class="btn btn-primary" [routerLink]="['/actualizar', item]">Editar</button>
                     <button class="btn btn-danger" (click)="(item)">Ver</button>
             </tr>
         </tbody>

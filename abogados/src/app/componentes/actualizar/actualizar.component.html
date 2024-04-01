@@ -1,59 +1,57 @@
-
-    <div class="main">
-
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                        <h2 class="form-title">Actualizar Petición</h2>
-                        <form method="POST" class="register-form" id="register-form">
-                            <div class="form-group">
-                                <label for="pet_id"><i class="zmdi zmdi-account material-icons-pet_id"></i></label>
-                                <input type="text" name="pet_id" id="pet_id" placeholder="Id" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pet_descripcion"><i class="zmdi zmdi-pet_descripcion"></i></label>
-                                <input type="text" name="pet_descripcion" id="pet_descripcion" placeholder="Descripción" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pet_fecha_registro"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="text" name="pet_fecha_registro" id="pet_fecha_registro" placeholder="Fecha Registro" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pet_fecha_respuesta"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="text" name="pet_fecha_respuesta" id="pet_fecha_respuesta" placeholder="Fecha Respuesta" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="tipo_pe_id"><i class="zmdi zmdi-account material-icons-tipo_pe_id"></i></label>
-                                <input type="text" name="tipo_pe_id" id="tipo_pe_id" placeholder="Tipo Petición" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="abo_documento"><i class="zmdi zmdi-abo_documento"></i></label>
-                                <input type="text" name="abo_documento" id="abo_documento" placeholder="Documento" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_clientes"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="text" name="id_clientes" id="id_clientes" placeholder="Clientes" readonly/>
-                            </div>
-                            <div class="form-group">
-                                <label for="seg_id"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="text" name="est_seg" id="est_seg" placeholder="Estado (Registrada, En curso o Terminada)" />
-                            </div>
-                            <div class="form-group">
-                                <label for="seg_descripcion"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="text" name="seg_descripcion" id="seg_descripcion" placeholder="Novedades del seguimiento"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pet_prioridad"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="text" name="pet_prioridad" id="pet_prioridad" placeholder="Prioridad" readonly/>
-                            </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Actualizar"/>
-                            </div>
-                        </form>
-                    </div>
+<div class="main">
+    <!-- Actualizar petición form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Actualizar Petición</h2>
+                    <form method="POST" class="register-form" id="register-form">
+                        <div class="form-group">
+                            <p>Id</p>
+                            <input type="text" name="pet_id" id="pet_id" placeholder="Id" [value]="item.pet_id" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Descripción</p>
+                            <input type="text" name="pet_descripcion" id="pet_descripcion" placeholder="Descripción" [value]="item.pet_descripcion" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Fecha Registro</p>
+                            <input type="text" name="pet_fecha_registro" id="pet_fecha_registro" placeholder="Fecha Registro" [value]="item.pet_fecha_registro" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Fecha Respuesta</p>
+                            <input type="text" name="pet_fecha_respuesta" id="pet_fecha_respuesta" placeholder="Fecha Respuesta" [value]="item.pet_fecha_respuesta" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Tipo de Petición</p>
+                            <input type="text" name="tipo_pe_id" id="tipo_pe_id" placeholder="Tipo Petición" [value]="item.tipo_pe_id" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Documento del Abogado</p>
+                            <input type="text" name="abo_documento" id="abo_documento" placeholder="Documento" [value]="item.abo_documento" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Cliente</p>
+                            <input type="text" name="id_clientes" id="id_clientes" placeholder="Clientes" [value]="item.id_clientes" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <p>Estado del Seguimiento</p>
+                            <input type="text" name="est_seg" id="est_seg" placeholder="Estado (Registrada, En curso o Terminada)" />
+                        </div>
+                        <div class="form-group">
+                            <p>Novedades del Seguimiento</p>
+                            <input type="text" name="seg_descripcion" id="seg_descripcion" placeholder="Novedades del seguimiento"/>
+                        </div>
+                        <div class="form-group">
+                            <p>Prioridad</p>
+                            <input type="text" name="pet_prioridad" id="pet_prioridad" placeholder="Prioridad" [value]="item.pet_prioridad" readonly/>
+                        </div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Actualizar"/>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </section>
+</div>
