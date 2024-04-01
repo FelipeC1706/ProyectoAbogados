@@ -4,6 +4,7 @@ const dbConnection = require('./database/db');
 const lawyerController = require('./controllers/lawyerController');
 const requestsController = require('./controllers/requestsController');
 const clientController = require('./controllers/clientController');
+const seguimientoController = require('./controllers/seguimientoController');
 const login = require('./controllers/login');
 const app = express();
 
@@ -54,5 +55,11 @@ router.patch('/clients/:id', clientController.changeStatus);
 
 // Ruta para obtener un cliente por su ID
 router.get('/clients/:id', clientController.getClientById);
+
+// Ruta para actualizar el seguimiento de una petición
+router.put('/requests_seg/:pet_id', requestsController.agregarIdSeguimiento);
+
+// Ruta para añadir seguimiento
+router.post('/seguimiento', seguimientoController.insertarNovedad);
 
 module.exports = router;

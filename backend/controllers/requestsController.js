@@ -57,9 +57,25 @@ function updateRequest(req, res) {
   });
 }
 
+// Función para agregar el ID de seguimiento a la tabla peticiones
+function agregarIdSeguimiento(req, res) {
+  const seg_id = req.body.seg_id;
+  const pet_id = req.params.pet_id;
+  const sql = 'UPDATE peticiones SET seg_id = ? WHERE pet_id = ?';
+  dbConnection.query(sql, [seg_id, pet_id], (err, resultado) => {
+    if (err) {
+      console.error('Error al agregar la id del seguimiento: ', err);
+      res.status(500).send('Error interno del servidor');
+      return;
+    }
+    res.json(resultado);
+  });
+}
+
 
 module.exports = {
     getRequests,
     updateRequest,
-    getRequestsLawyer
+    getRequestsLawyer,
+    agregarIdSeguimiento
 };
