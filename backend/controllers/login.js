@@ -45,7 +45,6 @@ const bcrypt = require('bcryptjs');
     }
 };
 
-//INICIO SESION ABOGADO
 exports.authAbo = async (req, res) => {
     const abo_correo = req.body.user;
     const abo_password = req.body.pass;
@@ -55,35 +54,33 @@ exports.authAbo = async (req, res) => {
         const values = [abo_correo, abo_password];
 
         config.query(query, values, (err, resultados) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error de servidor');
-                return;
-            }
+            if (abo_correo && abo_password) {
+                if (resultados.length === 0 || abo_password !== resultados[0].abo_password) {
+                    res.status(400).send({
+                        alert: true,
+                        alertTitle: "Error",
+                        alertMessage: "Credenciales incorrectas",
+                        ruta: 'login'
+                    });
+                } else {
+                    // Crear la sesión aquí
+                    req.session.loggedin = true;
+                    req.session.name = resultados[0].name;
 
-            if (resultados.length === 0 || abo_password != resultados[0].abo_password) {
-                res.status(400).send({
-                    alert: true,
-                    alertTitle: "Error",
-                    alertMessage: "Credenciales incorrectas",
-                    ruta: 'login'
-                });
-                return;
+                    res.status(200).send({
+                        alert: true,
+                        alertTitle: "Conexión exitosa",
+                        alertMessage: "Success",
+                        alertIcon: 'success',
+                        ruta: ''
+                    });
+					return;
+                }
+                res.end();
+            } else {
+                res.send('Por favor, ingresa usuario y contraseña.');
+                res.end();
             }
-            req.session.loggedin = true;
-            req.session.user = {
-                id: resultados[0].id,
-                name: resultados[0].name,
-                // Agrega aquí más datos de sesión si los necesitas
-            };
-
-            res.status(200).send({
-                alert: true,
-                alertTitle: "Conexión exitosa",
-                alertMessage: "Success",
-                alertIcon: 'success',
-                ruta: ''
-            });
         });
     } catch (err) {
         console.error(err);
@@ -92,14 +89,14 @@ exports.authAbo = async (req, res) => {
 };
 
 
-exports.validarSesion = (req, res, next) => {
+exports.validarSesion = (req, res) => {
     // Verifica si existe la sesión y si está autenticado
-    if (req.session.loggedin) {
+    if (req.session.loggedin === true) {
         // Si la sesión está activa, permite que continúe con la solicitud
-		res.status(200).json({
-			authenticated: true,
-			message: "Usuario autenticado"
-		});
+        res.status(200).json({
+            authenticated: true,
+            message: "Usuario autenticado"
+        });
     } else {
         // Si no hay sesión activa, devuelve un error de no autorizado
         res.status(401).json({
