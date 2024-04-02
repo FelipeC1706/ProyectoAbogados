@@ -51,58 +51,73 @@ exports.authAbo = async (req, res) => {
     const abo_password = req.body.pass;
 
     try {
-		console.log("yooooo111");
         const query = `SELECT * FROM abogados WHERE abo_correo = ? and abo_password = ?`;
-		const values = [abo_correo, abo_password];
-		console.log("aquiiii");
+        const values = [abo_correo, abo_password];
+
         config.query(query, values, (err, resultados) => {
-			//usuarioEncontrado = resultados[0];
-			if (abo_correo && abo_password) {
-				if (resultados.length === 0 || abo_password != resultados[0].abo_password) {
-					res.status(400).send({
-						alert: true,
-						alertTitle: "Error",
-						alertMessage: "credenciales incorrectas",
-						ruta: 'login'
-					  });
-				} else {
-					req.session.loggedin = true;
-					req.session.name = resultados[0].name;
-					res.status(200).send({
-						alert: true,
-						alertTitle: "Conexión exitosa",
-						alertMessage: "Success",
-						alertIcon: 'success',
-						ruta: ''
-					});
-				}
-				res.end();
-			} else {
-				res.send('Please enter user and Password!');
-				res.end();
-			}
-		});
+            if (err) {
+                console.error(err);
+                res.status(500).send('Error de servidor');
+                return;
+            }
+
+            if (resultados.length === 0 || abo_password != resultados[0].abo_password) {
+                res.status(400).send({
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "Credenciales incorrectas",
+                    ruta: 'login'
+                });
+                return;
+            }
+            req.session.loggedin = true;
+            req.session.user = {
+                id: resultados[0].id,
+                name: resultados[0].name,
+                // Agrega aquí más datos de sesión si los necesitas
+            };
+
+            res.status(200).send({
+                alert: true,
+                alertTitle: "Conexión exitosa",
+                alertMessage: "Success",
+                alertIcon: 'success',
+                ruta: ''
+            });
+        });
     } catch (err) {
         console.error(err);
         res.status(500).send('Error de servidor');
     }
 };
 
-exports.validarSesion =  (req, res)=> {
-    //TODO: validar si el usuario está logueado
-    //Debemos de crear una cookie desde el frontend que será igual al token de inicio de sesión de express
-	if (req.session.loggedin) {
-        res.send('loggeado');
-		// res.send('index',{
-		// 	login: true,
-		// 	name: req.session.name			
-		// });		
-	} else {
-        res.send('no loggeado');
-		// res.send('index',{
-		// 	login:false,
-		// 	name:'Debe iniciar sesión',			
-		// });				
-	}
-	res.end();
+
+exports.validarSesion = (req, res, next) => {
+    // Verifica si existe la sesión y si está autenticado
+    if (req.session.loggedin) {
+        // Si la sesión está activa, permite que continúe con la solicitud
+		res.status(200).json({
+			authenticated: true,
+			message: "Usuario autenticado"
+		});
+    } else {
+        // Si no hay sesión activa, devuelve un error de no autorizado
+        res.status(401).json({
+            error: true,
+            message: "No autorizado"
+        });
+    }
+};
+
+exports.destroySession = (req, res) => {
+    // Destruir la sesión
+    req.session.destroy(err => {
+        if (err) {
+            console.error("Error al destruir la sesión:", err);
+            res.status(500).json({ error: true, message: "Error al cerrar sesión" });
+            return;
+        }
+        // La sesión se destruyó correctamente
+        res.status(200).json({ success: true, message: "Sesión cerrada correctamente" });
+    });
 };
