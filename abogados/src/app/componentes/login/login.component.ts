@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit{
         if (response.ok) {
             // Si la respuesta es exitosa (código de estado 200), mostrar un mensaje de éxito
             this.toastr.success('Credenciales correctas');
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/inicio']);
         } else {
             // Si la respuesta es un error (código de estado diferente de 200), mostrar un mensaje de error
             this.toastr.error('Credenciales incorrectas');
