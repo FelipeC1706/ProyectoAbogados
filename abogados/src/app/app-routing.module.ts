@@ -7,6 +7,7 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 //components
 import { LoginComponent } from './componentes/login/login.component';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'peticiones', component: PeticionesComponent},
   {path: 'actualizar', component: ActualizarComponent},
+  {path: 'inicio', component: InicioComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

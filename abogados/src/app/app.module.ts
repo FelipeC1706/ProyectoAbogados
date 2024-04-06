@@ -11,6 +11,7 @@ import {DataTablesModule} from 'angular-datatables';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 
 
@@ -21,6 +22,7 @@ import { ActualizarComponent } from './componentes/actualizar/actualizar.compone
     PeticionesComponent,
     LoginComponent,
     ActualizarComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
