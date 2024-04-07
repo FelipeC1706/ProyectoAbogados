@@ -1,36 +1,22 @@
-.img-fluid {
+.carousel-caption h5 {
+    font-size: 28px; 
+}
+.carousel-caption{
+    font-size: 22px;
+    width: 60%;
+    left: 20%;
+    top: 40%;
+    bottom: 38%;
+    background-color: #5850508c;
+    border-radius: 10px;
+}
+.carousel-item{
+    width: 100%;
+    height: 100%;
+}
+.d-block{
     position: relative;
     width: 100%;
     height: 100%;
-    border: none;
 }
 
-.container-fluid {
-    position: absolute;
-    width:100%;
-    top: 40%; 
-}
-
-.card {
-    position: absolute; 
-    top: 73%; 
-    left: 28%; 
-    width: 45%;
-    height: 360px;
-    background: rgba(109, 105, 105, 0.772);
-    border-radius: 20px;
-    color: white;
-}
-.card-title{ 
-    position: relative;
-    top: 5%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 45px;
-}
-.card-text{
-    position: relative;
-    top: 10%;
-    text-align: center;
-    font-size: 22px;
-}
