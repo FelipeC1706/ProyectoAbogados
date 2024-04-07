@@ -1,7 +1,7 @@
 .img-fluid {
     position: relative;
     width: 1920px;
-    height: 600px;
+    height: 808px;
     border: none;
 }
 
@@ -14,7 +14,7 @@
 .card {
     position: absolute; 
     top: 73%; 
-    left: 25%; 
+    left: 28%; 
     width: 45%;
     height: 360px;
     background: rgba(109, 105, 105, 0.772);
