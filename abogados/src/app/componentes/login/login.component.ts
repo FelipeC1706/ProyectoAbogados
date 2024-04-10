@@ -54,5 +54,26 @@ export class LoginComponent implements OnInit{
     .catch(error=>{
         console.log(error);
     });
+
+    fetch('http://localhost:3000/lawyersUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Error en la operación fetch');
+        }
+      })
+      .then(data => {
+        localStorage.setItem("abogado", JSON.stringify(data));
+      })
+      .catch(error => {
+        console.error(error);
+      });
 }
 }

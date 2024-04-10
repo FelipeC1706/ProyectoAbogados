@@ -15,7 +15,10 @@ function getRequests(req, res) {
 
 function getRequestsLawyer(req, res) {
   const abo_documento = req.params.abo_documento;
-  dbConnection.query('SELECT * FROM peticiones where abo_documento = ?', [abo_documento],(err, resultados) => {
+  const query = 'SELECT p.pet_id, p.pet_descripcion, p.pet_fecha_registro, p.pet_fecha_respuesta, tp.tipo_pe_id, tp.tipo_pe_descripcion, p.abo_documento,c.id_clientes,'+
+   'CONCAT(c.cli_nombre," ",c.cli_apellidos) as cliente, s.seg_id, s.seg_descripcion, p.pet_prioridad FROM peticiones p join tipo_peticiones tp on p.tipo_pe_id = tp.tipo_pe_id'+
+   ' JOIN clientes c on p.id_clientes = c.id_clientes JOIN seguimientos s on p.seg_id = s.seg_id where p.abo_documento = ?';
+  dbConnection.query(query, [abo_documento],(err, resultados) => {
     if (err) {
       console.error('Error al ejecutar la consulta: ', err);
       res.status(500).send('Error interno del servidor');

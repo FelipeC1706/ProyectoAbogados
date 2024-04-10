@@ -76,6 +76,19 @@ function getLawyerById(req, res) {
   });
 }
 
+function postLawyerByUser(req, res) {
+  const { user, pass } = req.body;
+  const query = 'SELECT abo_documento, abo_nombres, abo_apellidos FROM abogados WHERE abo_correo = ? and abo_password=? ;';
+  dbConnection.query(query, [user, pass], (err, resultados) => {
+    if (err) {
+      console.error('Error al ejecutar la consulta: ', err);
+      res.status(500).send('Error interno del servidor');
+      return;
+    }
+    res.json(resultados);
+  });
+}
+
 
 
 // Exportar el controlador para ser utilizado en otras partes de la aplicación
@@ -84,5 +97,6 @@ module.exports = {
     addLawyer,
     updateLawyer,
     changeStatus,
-    getLawyerById
+    getLawyerById,
+    postLawyerByUser
 };

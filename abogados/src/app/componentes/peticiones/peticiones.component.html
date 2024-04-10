@@ -6,11 +6,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>descripcion</th>
-                <th>fecha registro</th>
-                <th>fecha respuesta</th>
-                <th>tipo peticion</th>
-                <th>documento abogado</th>
+                <th>descripción</th>
+                <th>fecha de registro</th>
+                <th>fecha de respuesta</th>
+                <th>tipo de petición</th>
+                <th>documento del abogado</th>
                 <th>cliente</th>
                 <th>seguimiento</th>
                 <th>prioridad</th>
@@ -23,14 +23,15 @@
                 <td>{{ item.pet_descripcion }}</td>
                 <td>{{ item.pet_fecha_registro }}</td>
                 <td>{{ item.pet_fecha_respuesta }}</td>
-                <td>{{ item.tipo_pe_id }}</td>
+                <td>{{ item.tipo_pe_descripcion }}</td>
                 <td>{{ item.abo_documento }}</td>
-                <td>{{ item.id_clientes }}</td>
-                <td>{{ item.seg_id }}</td>
+                <td>{{ item.cliente }}</td>
+                <td>{{ item.seg_descripcion }}</td>
                 <td>{{ item.pet_prioridad }}</td>
                 <td>
                     <button class="btn btn-primary" [routerLink]="['/actualizar', item]">Editar</button>
                     <button class="btn btn-danger" (click)="(item)">Ver</button>
+                </td>
             </tr>
         </tbody>
     </table>
