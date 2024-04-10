@@ -1,0 +1,121 @@
+
+.boton {
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    margin-right: 800px;
+    margin-left: 5px;
+}
+.jpg-icon {
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+
+  }
+
+.seccion-perfil-usuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background:  linear-gradient(#ff9f3c, transparent);
+    margin-bottom: 1.25rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-portada {
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 15rem;
+    background: linear-gradient(45deg,#002b3b, #2b5374, #002b3b);
+    border-radius: 0 0 20px 20px;
+    }
+
+.seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #ffffff;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar img {
+width: 100%;
+position: relative;
+
+}
+
+.seccion-perfil-usuario .perfil-usuario-body {
+    width: 75%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+.seccion-perfil-usuario .perfil-usuario-body .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem; 
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: justify;
+    width: 100%;
+}
+
+.seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-footer {
+    padding: 0;
+}
+.seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
+}
+
+.seccion-perfil-usuario .lista-datos li > .icono {
+ margin-right: 1rem;
+ font-size: 1.2rem;
+ vertical-align: middle;
+}
+
+/*ADAPTACION A TODOS LOS DISPOSITIVOS*/
+@media (max-width: 750px){
+    .seccion-perfil-usuario .lista-datos{
+        width: 100%;
+    }
+    .seccion-perfil-usuario .perfil-usuario-portada,
+    .seccion-perfil-usuario .perfil-usuario-body {
+        width: 95%;
+    }
+}

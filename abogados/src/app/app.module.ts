@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 
 
@@ -23,6 +24,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
     LoginComponent,
     ActualizarComponent,
     InicioComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
