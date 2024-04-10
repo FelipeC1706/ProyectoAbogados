@@ -8,6 +8,7 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { LoginComponent } from './componentes/login/login.component';
 import { ActualizarComponent } from './componentes/actualizar/actualizar.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'peticiones', component: PeticionesComponent},
   {path: 'actualizar', component: ActualizarComponent},
   {path: 'inicio', component: InicioComponent},
+  {path: 'perfil', component: PerfilComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
