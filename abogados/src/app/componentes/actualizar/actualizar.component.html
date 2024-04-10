@@ -48,12 +48,9 @@
                             <br>
                             <button class="btn btn-primary" (click)="postEstado()">Agregar Estado</button>
                         </div> -->
-                        <div class="form-group" >
-                        <p>Estado de seguimiento</p>
                         <select class="form-select" aria-label="Default select example" name="seg_id" id="seg_id" [(ngModel)]="seg_id">
                             <option *ngFor="let option of seguimientos" [value]="option.seg_id">{{ option.seg_descripcion }}</option>
                           </select>
-                        </div>
                         <!-- <div class="form-group">
                             <p>Novedades del Seguimiento</p>
                             <input type="text" name="seg_descripcion" id="seg_descripcion" placeholder="Novedades del seguimiento" [(ngModel)] = "seg_descripcion"/>
