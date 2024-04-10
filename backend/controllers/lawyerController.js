@@ -78,7 +78,7 @@ function getLawyerById(req, res) {
 
 function postLawyerByUser(req, res) {
   const { user, pass } = req.body;
-  const query = 'SELECT abo_documento, abo_nombres, abo_apellidos, abo_correo FROM abogados WHERE abo_correo = ? and abo_password=? ;';
+  const query = 'SELECT abo_documento, abo_nombres, abo_apellidos FROM abogados WHERE abo_correo = ? and abo_password=? ;';
   dbConnection.query(query, [user, pass], (err, resultados) => {
     if (err) {
       console.error('Error al ejecutar la consulta: ', err);

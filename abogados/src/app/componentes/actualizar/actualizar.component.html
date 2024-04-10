@@ -8,11 +8,11 @@
                     <form method="POST" class="register-form" id="register-form">
                         <div class="form-group">
                             <p>Id</p>
-                            <input type="text" name="pet_id" id="pet_id" placeholder="Id" [(ngModel)]="pet_id" readonly/>
+                            <input type="text" name="pet_id" id="pet_id" placeholder="Id" [value]="item.pet_id" readonly/>
                         </div>
                         <div class="form-group">
                             <p>Descripción</p>
-                            <input type="text" name="pet_descripcion" id="pet_descripcion" placeholder="Descripción" [(ngModel)]="item.pet_descripcion" readonly/>
+                            <input type="text" name="pet_descripcion" id="pet_descripcion" placeholder="Descripción" [value]="item.pet_descripcion" readonly/>
                         </div>
                         <div class="form-group">
                             <p>Fecha Registro</p>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group">
                             <p>Tipo de Petición</p>
-                            <input type="text" name="tipo_pe_id" id="tipo_pe_id" placeholder="Tipo Petición" [value]="item.tipo_pe_descripcion" readonly/>
+                            <input type="text" name="tipo_pe_id" id="tipo_pe_id" placeholder="Tipo Petición" [value]="item.tipo_pe_id" readonly/>
                         </div>
                         <div class="form-group">
                             <p>Documento del Abogado</p>
@@ -32,9 +32,9 @@
                         </div>
                         <div class="form-group">
                             <p>Cliente</p>
-                            <input type="text" name="id_clientes" id="id_clientes" placeholder="Clientes" [value]="item.cliente" readonly/>
+                            <input type="text" name="id_clientes" id="id_clientes" placeholder="Clientes" [value]="item.id_clientes" readonly/>
                         </div>
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <p>Estado del Seguimiento</p>
                             <select class="form-select" aria-label="Default select example" name="seg_estado" id="seg_estado" [(ngModel)]="est_id">
                                 <option value="1">Registrada</option>
@@ -47,16 +47,17 @@
                             <input type="text" name="his_descripcion" id="his_descripcion" placeholder="Descripción del Estado" [(ngModel)] = "his_descripcion"/>
                             <br>
                             <button class="btn btn-primary" (click)="postEstado()">Agregar Estado</button>
-                        </div> -->
-                        <select class="form-select" aria-label="Default select example" name="seg_id" id="seg_id" [(ngModel)]="seg_id">
-                            <option *ngFor="let option of seguimientos" [value]="option.seg_id">{{ option.seg_descripcion }}</option>
-                          </select>
-                        <!-- <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <p>Id Seguimiento</p>
+                            <input type="text" name="id_seg" id="id_seg" placeholder="Id seguimiento" [value]="item.seg_id" [(ngModel)] = "seg_id"/>
+                        </div>
+                        <div class="form-group">
                             <p>Novedades del Seguimiento</p>
                             <input type="text" name="seg_descripcion" id="seg_descripcion" placeholder="Novedades del seguimiento" [(ngModel)] = "seg_descripcion"/>
                             <br>
                             <button class="btn btn-primary" (click)="postSeguimiento()">Agregar novedad</button>
-                        </div> -->
+                        </div>
                         <div class="form-group">
                             <p>Prioridad</p>
                             <input type="text" name="pet_prioridad" id="pet_prioridad" placeholder="Prioridad" [value]="item.pet_prioridad" readonly/>

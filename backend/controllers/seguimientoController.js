@@ -30,7 +30,7 @@ function insertarNovedad(req, res) {
 
   // Función para obtener la id del ultimo seguimiento
   function getSeguimiento(req, res) {
-    const sql = 'SELECT * FROM seguimientos'; 
+    const sql = 'SELECT seg_id FROM seguimientos ORDER BY seg_id DESC LIMIT 1'; 
     dbConnection.query(sql, (err, resultado) => {
       if (err) {
         console.error('Error al obtener seguimientos: ', err);

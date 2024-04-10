@@ -46,7 +46,7 @@ router.get('/requests', requestsController.getRequests);
 router.put('/requests/:id', requestsController.updateRequest);
 
 // Ruta para actualizar el seguimiento de una petición
-router.put('/requests_seg/:pet_id', requestsController.updateSeguimiento);
+router.put('/requests_seg/:pet_id', requestsController.agregarIdSeguimiento);
 
 // Ruta para obtener todos los clientes
 router.get('/clients', clientController.getClients);

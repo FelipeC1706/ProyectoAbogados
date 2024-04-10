@@ -61,7 +61,7 @@ function updateRequest(req, res) {
 }
 
 // Función para agregar el ID de seguimiento a la tabla peticiones
-function updateSeguimiento(req, res) {
+function agregarIdSeguimiento(req, res) {
   const seg_id = req.body.seg_id;
   const pet_id = req.params.pet_id;
   const sql = 'UPDATE peticiones SET seg_id = ? WHERE pet_id = ?';
@@ -80,5 +80,5 @@ module.exports = {
     getRequests,
     updateRequest,
     getRequestsLawyer,
-    updateSeguimiento
+    agregarIdSeguimiento
 };
