@@ -16,7 +16,7 @@ body {
 .jpg-icon {
   max-width: 100%;
   border-radius: 10px;
-  width:200px;
+  width:100px;
 }
 
 .avatar{
@@ -42,7 +42,6 @@ a {
 /* Layout */
 .s-layout {
   display: flex;
-  width: 100%;
   min-height: 100vh;
 }
 
@@ -74,8 +73,8 @@ a {
   margin: 160px;
   width: 200px;
   border-right: none;
-  background: #002b3b;
-  color: white;
+  background: white;
+  color: black;
   border-radius: 10px;
   padding: 120px;
   text-align: center;
@@ -113,7 +112,7 @@ a {
 }
 
 .s-sidebar__nav-link:hover {
-  background: #2b5374;
+  background: #f1f1f1;
 }
 
 .s-sidebar__nav-link > i {
@@ -138,5 +137,14 @@ a {
     margin:0px;
   }
   
+.navbar-dark .navbar-toggler {
+  border-color: rgba(0,0,0,.1);
+}
 
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 
+.navbar-dark .navbar-toggler:hover {
+  background-color: rgba(0,0,0,.1);
+}
